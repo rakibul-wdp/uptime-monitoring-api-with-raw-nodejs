@@ -1,0 +1,29 @@
+{
+  "name": "uptime-monitoring-api-with-raw-nodejs",
+  "version": "1.0.0",
+  "description": "- RESTFulAPI - Authentication & Authorization - User Signup & Add/Edit Settings - SMS Notification using Twilio API - RAW Node.js, no npm modules",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakibul-wdp/uptime-monitoring-api-with-raw-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rakibul-wdp/uptime-monitoring-api-with-raw-nodejs/issues"
+  },
+  "homepage": "https://github.com/rakibul-wdp/uptime-monitoring-api-with-raw-nodejs#readme",
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  }
+}
