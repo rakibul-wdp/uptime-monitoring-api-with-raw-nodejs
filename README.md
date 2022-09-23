@@ -32,3 +32,10 @@
 - In post method we see how to pass data in body.
 
 ### Refactor Code
+
+- Handle request and response functionality cut another file for better code readability.
+
+### Routing Setup
+
+- Create sample route and not found route and put those route in routes file.
+- Main work doing in handle req res file.
