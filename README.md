@@ -27,3 +27,6 @@
 - But we need proper path one way.
 - That's why we use replace method for trimmed path by this reg. expression.
 - `.replace(/^\/+|\/+$/g, '')`
+- If we need query string just do it `parseUrl.query`
+- By req.headers we can get request headers.
+- In post method we see how to pass data in body.
