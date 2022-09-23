@@ -22,3 +22,8 @@
 - require dependencies, create app object - module scaffolding, configuration, server, handle request and response, and start the server.
 
 ### Parsing Request
+
+- Normally we get path many way like about/ or about or about/index
+- But we need proper path one way.
+- That's why we use replace method for trimmed path by this reg. expression.
+- `.replace(/^\/+|\/+$/g, '')`
