@@ -4,7 +4,8 @@
   "description": "- RESTFulAPI - Authentication & Authorization - User Signup & Add/Edit Settings - SMS Notification using Twilio API - RAW Node.js, no npm modules",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index",
+    "start": "NODE_ENV=staging nodemon index",
+    "production": "NODE_ENV=production nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
