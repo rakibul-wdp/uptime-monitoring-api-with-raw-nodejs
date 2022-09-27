@@ -39,3 +39,15 @@
 
 - Create sample route and not found route and put those route in routes file.
 - Main work doing in handle req res file.
+
+### Brief Summary
+
+- What we are doing overall.
+
+### Final Words
+
+### Part - 2
+
+- Using Environment Variables
+- Data Storage in File System
+- CRUD System with fs module
