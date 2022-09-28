@@ -16,8 +16,8 @@ const app = {};
 
 // testing file system
 // @TODO: delete after some time
-data.create('test', 'newFile', { name: 'Bangladesh', language: 'Bangla' }, (err) => {
-  console.log('error was', err);
+data.read('test', 'newFile', (err, data) => {
+  console.log(err, data);
 });
 
 // create server

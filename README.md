@@ -55,3 +55,6 @@
 ### Environment Variable
 
 ### Data Storage in File System
+
+- See how to create file.
+- See how to read data.
