@@ -16,7 +16,7 @@ const app = {};
 
 // testing file system
 // @TODO: delete after some time
-data.delete('test', 'newFile', (err) => {
+data.create('test', 'newFile', { name: 'Bangladesh', language: 'Bangla' }, (err) => {
   console.log(err);
 });
 
