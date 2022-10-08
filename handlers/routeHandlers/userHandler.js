@@ -24,22 +24,29 @@ handler.userHandler = (requestProperties, callback) => {
 handler._users = {};
 
 handler._users.post = (requestProperties, callback) => {
-  const firstName = typeof requestProperties.body.firstName === 'string';
-  requestProperties.body.firstName.trim().length > 0 ? requestProperties.body.firstName : false;
+  const firstName =    typeof requestProperties.body.firstName === 'string' &&
+    requestProperties.body.firstName.trim().length > 0
+      ? requestProperties.body.firstName
+      : false;
 
-  const lastName = typeof requestProperties.body.lastName === 'string';
-  requestProperties.body.lastName.trim().length > 0 ? requestProperties.body.lastName : false;
+  const lastName =    typeof requestProperties.body.lastName === 'string' &&
+    requestProperties.body.lastName.trim().length > 0
+      ? requestProperties.body.lastName
+      : false;
 
-  const phone = typeof requestProperties.body.phone === 'string';
-  requestProperties.body.phone.trim().length > 0 ? requestProperties.body.phone : false;
+  const phone =    typeof requestProperties.body.phone === 'string' &&
+    requestProperties.body.phone.trim().length > 0
+      ? requestProperties.body.phone
+      : false;
 
-  const password = typeof requestProperties.body.password === 'string';
-  requestProperties.body.password.trim().length > 0 ? requestProperties.body.password : false;
+  const password =    typeof requestProperties.body.password === 'string' &&
+    requestProperties.body.password.trim().length === 11
+      ? requestProperties.body.password
+      : false;
 
-  const tosAgreement = typeof requestProperties.body.tosAgreement === 'string';
-  requestProperties.body.tosAgreement.trim().length > 0
-    ? requestProperties.body.tosAgreement
-    : false;
+  const tosAgreement =    typeof requestProperties.body.tosAgreement === 'boolean' && requestProperties.body.tosAgreement
+      ? requestProperties.body.tosAgreement
+      : false;
 
   if (firstName && lastName && phone && password && tosAgreement) {
     // make sure that the user doesn't already exists
