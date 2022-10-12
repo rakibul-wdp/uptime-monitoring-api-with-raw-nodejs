@@ -37,8 +37,7 @@ handler._users.post = (requestProperties, callback) => {
   const password = typeof requestProperties.body.password === 'string';
   requestProperties.body.password.trim().length === 11 ? requestProperties.body.password : false;
 
-  const tosAgreement =
-    typeof requestProperties.body.tosAgreement === 'boolean' && requestProperties.body.tosAgreement
+  const tosAgreement =    typeof requestProperties.body.tosAgreement === 'boolean' && requestProperties.body.tosAgreement
       ? requestProperties.body.tosAgreement
       : false;
 
@@ -76,6 +75,7 @@ handler._users.post = (requestProperties, callback) => {
   }
 };
 
+// Authentication
 handler._users.get = (requestProperties, callback) => {
   // check the phone number if valid
   const phone = typeof requestProperties.queryStringObject.phone === 'string';
@@ -102,6 +102,7 @@ handler._users.get = (requestProperties, callback) => {
   }
 };
 
+// Authentication
 handler._users.put = (requestProperties, callback) => {
   // check the phone number if valid
   const phone = typeof requestProperties.body.phone === 'string';
@@ -158,6 +159,7 @@ handler._users.put = (requestProperties, callback) => {
   }
 };
 
+// Authentication
 handler._users.delete = (requestProperties, callback) => {
   // check the phone number if valid
   const phone = typeof requestProperties.queryStringObject.phone === 'string';
