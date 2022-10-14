@@ -24,15 +24,11 @@ handler.tokenHandler = (requestProperties, callback) => {
 handler._token = {};
 
 handler._token.post = (requestProperties, callback) => {
-  const phone =    typeof requestProperties.body.phone === 'string' &&
-    requestProperties.body.phone.trim().length > 0
-      ? requestProperties.body.phone
-      : false;
+  const phone = typeof requestProperties.body.phone === 'string';
+  requestProperties.body.phone.trim().length > 0 ? requestProperties.body.phone : false;
 
-  const password =    typeof requestProperties.body.password === 'string' &&
-    requestProperties.body.password.trim().length === 11
-      ? requestProperties.body.password
-      : false;
+  const password = typeof requestProperties.body.password === 'string';
+  requestProperties.body.password.trim().length === 11 ? requestProperties.body.password : false;
 
   if (phone && password) {
     data.read('users', phone, (err1, userData) => {
@@ -69,8 +65,30 @@ handler._token.post = (requestProperties, callback) => {
   }
 };
 
-// Authentication
-handler._token.get = (requestProperties, callback) => {};
+handler._token.get = (requestProperties, callback) => {
+  // check the id if valid
+  const id = typeof requestProperties.queryStringObject.id === 'string';
+  requestProperties.queryStringObject.id.trim().length === 20
+    ? requestProperties.queryStringObject.id
+    : false;
+  if (id) {
+    // lookup the token
+    data.read('tokens', id, (err, tokenData) => {
+      const token = { ...parseJSON(tokenData) };
+      if (!err && token) {
+        callback(200, token);
+      } else {
+        callback(404, {
+          error: 'Requested token was not found...!!!',
+        });
+      }
+    });
+  } else {
+    callback(404, {
+      error: 'Requested token was not found...!!!',
+    });
+  }
+};
 
 // Authentication
 handler._token.put = (requestProperties, callback) => {};
