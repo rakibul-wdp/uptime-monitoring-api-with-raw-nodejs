@@ -1,8 +1,8 @@
 /**
- * Title: User Handler
- * Description: Handler to handle user related routes
+ * Title: Check Handler
+ * Description: Handler to handle user defined checks
  * Author: Md. Rakibul Islam
- * Date: 30/09/2022
+ * Date: 14/10/2022
  */
 
 // dependencies
