@@ -15,6 +15,11 @@ environments.staging = {
   envName: 'staging',
   secretKey: 'hkalsdkdfalsdkfjlasdfsl',
   maxChecks: 5,
+  twilio: {
+    fromPhone: '',
+    accountSid: '',
+    authToken: '',
+  },
 };
 
 environments.production = {
@@ -22,15 +27,18 @@ environments.production = {
   envName: 'production',
   secretKey: 'hkalslksdjflslieowasdfsl',
   maxChecks: 5,
+  twilio: {
+    fromPhone: '',
+    accountSid: '',
+    authToken: '',
+  },
 };
 
 // determine which environment was passed
-const currentEnvironment =
-  typeof process.env.NODE_ENV === 'string' ? process.env.NODE_ENV : 'staging';
+const currentEnvironment =  typeof process.env.NODE_ENV === 'string' ? process.env.NODE_ENV : 'staging';
 
 // export corresponding environment object
-const environmentToExport =
-  typeof environments[currentEnvironment] === 'object'
+const environmentToExport =  typeof environments[currentEnvironment] === 'object'
     ? environments[currentEnvironment]
     : environments.staging;
 
