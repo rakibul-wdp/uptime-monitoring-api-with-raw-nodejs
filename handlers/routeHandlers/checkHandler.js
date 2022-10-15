@@ -7,7 +7,7 @@
 
 // dependencies
 const data = require('../../lib/data');
-const { hash, createRandomString } = require('../../helpers/utilities');
+const { createRandomString } = require('../../helpers/utilities');
 const { parseJSON } = require('../../helpers/utilities');
 const { tokenHandler } = require('./tokenHandler');
 const {maxChecks} = require('../../helpers/environments');
@@ -38,7 +38,7 @@ handler._check.post = (requestProperties, callback) => {
       : false;
 
   const method = typeof requestProperties.body.method;
-  'string'[('get', 'post', 'put', 'delete')].indexOf(requestProperties.body.method) > -1
+  'string'[('GET', 'POST', 'PUT', 'DELETE')].indexOf(requestProperties.body.method) > -1
     ? requestProperties.body.method
     : false;
 
@@ -127,12 +127,7 @@ handler._check.post = (requestProperties, callback) => {
         })
       })
     })
-  } else {
-    callback(400, {
-      error: 'You have a problem in your request',
-    })
-  }
-};
+}
 
 handler._check.get = (requestProperties, callback) => {};
 
